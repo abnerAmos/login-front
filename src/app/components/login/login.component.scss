@@ -16,6 +16,47 @@ main {
 
   .form-section {
     flex-grow: 0.3;
+    padding: 0 35px;
+    
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 45px;
+    }
+
+    .btn-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 30px;
+
+        button {
+        width: 100%;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        background: transparent;
+        padding: 12px 24px;
+
+        &.primary-btn {
+          background-color: $primary-color;
+          color: white;
+          box-shadow: 0px 8px 12px rgba($color: #7c7c7c, $alpha: 1.0);
+        }
+
+        &.secondary-btn {
+          border: 1px solid $primary-color;
+          color: $primary-color;
+        }
+      }
+    }
   }
 
   .logo-section {
