@@ -5,5 +5,23 @@ e adicionando demais dados como um form -->
   primaryBtnText="SIGN IN"
   secondaryBtnText="SIGN UP"
 >
-  <form [formGroup]="loginForm"></form>
+  <form [formGroup]="loginForm">
+    <app-first-input
+      formControlName="email"
+      inputName="email"
+      type="email"
+      label="Email"
+      placeHolder="johndoe@email.com"
+    >
+      <i class="fa fa-envelope"></i>
+    </app-first-input>
+    <app-first-input
+      formControlName="password"
+      inputName="password"
+      type="password"
+      label="Password"
+    >
+      <i class="fa fa-lock"></i>
+    </app-first-input>
+  </form>
 </app-login-component>

@@ -52,7 +52,7 @@ main {
         div {
           flex-grow: 1;
           height: 2px;
-          background-color: $background;
+          background-color: $first-background;
         }
       }
 
@@ -83,7 +83,7 @@ main {
   .logo-section {
     gap: 8px;
     flex-grow: 1;
-    background-color: $background;
+    background-color: $first-background;
     height: 100%;
 
     img {

@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from '../../components/login/login.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FirstInputComponent } from '../../components/first-input/first-input.component';
 
 @Component({
   selector: 'app-login-page',
   imports: [
     LoginComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FirstInputComponent
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
