@@ -5,6 +5,7 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  height: 100%;
 
   section {
     height: 100%;
@@ -18,8 +19,10 @@ main {
     flex-grow: 0.3;
     padding: 0 35px;
     
-    h1 {
+    img {
       margin-bottom: 30px;
+      width: 200px;
+      height: auto;
     }
 
     h2 {
@@ -36,25 +39,43 @@ main {
       width: 100%;
       gap: 30px;
 
-        button {
+      .divider {
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+        justify-content: center;
+        color: $second-text-color;
+        font-weight: 400;
+        gap: 20px;
         width: 100%;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 500;
-        border: none;
-        background: transparent;
-        padding: 12px 24px;
 
-        &.primary-btn {
-          background-color: $primary-color;
-          color: white;
-          box-shadow: 0px 8px 12px rgba($color: #7c7c7c, $alpha: 1.0);
+        div {
+          flex-grow: 1;
+          height: 2px;
+          background-color: $background;
         }
+      }
 
-        &.secondary-btn {
-          border: 1px solid $primary-color;
-          color: $primary-color;
-        }
+        button {
+          width: 100%;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 500;
+          border: none;
+          background: transparent;
+          padding: 12px 24px;
+          cursor: pointer;
+
+          &.primary-btn {
+            background-color: $primary-color;
+            color: white;
+            box-shadow: 0px 8px 12px rgba($color: #7c7c7c, $alpha: 1.0);
+          }
+
+          &.secondary-btn {
+            border: 1px solid $primary-color;
+            color: $primary-color;
+          }
       }
     }
   }
@@ -63,6 +84,12 @@ main {
     gap: 8px;
     flex-grow: 1;
     background-color: $background;
+    height: 100%;
+
+    img {
+      width: 250px;
+      height: auto;
+    }
   }
 
 

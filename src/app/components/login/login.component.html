@@ -1,17 +1,22 @@
 <main>
   <section class="form-section">
-    <h1>Wellcome to My Page</h1>
+    <img src="/assets/svg/logo-main.svg" alt="main-logo" />
     <h2>{{ title }}</h2>
+
+    <!-- ng-content injeta toda e qualquer informação adicional que esta vindo do HTML pai (loginPage) -->
+    <ng-content></ng-content>
     <div class="btn-wrapper">
       <button class="primary-btn">{{ primaryBtnText }}</button>
-      <div>
+      <div class="divider">
+        <div></div>
         <span>OR</span>
+        <div></div>
       </div>
       <button class="secondary-btn">{{ secondaryBtnText }}</button>
     </div>
   </section>
   <section class="logo-section">
-    <img src="/assets/svg/logo.svg" />
+    <img src="/assets/svg/logo.svg" alt="secundary-logo" />
     <h1>My Page</h1>
   </section>
 </main>
