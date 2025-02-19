@@ -1,10 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginComponent } from '../../components/login/login.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FirstInputComponent } from '../../components/first-input/first-input.component';
 import { Router } from '@angular/router';
-import { LoginService } from '../../services/login.service';
-import { ToastComponent } from '../../components/toast/toast.component';
+import { LoginService } from '../../services/login/login.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ToastService } from '../../services/toast/toast.service';
 
 @Component({
   selector: 'app-login-page',
@@ -13,10 +14,11 @@ import { ToastComponent } from '../../components/toast/toast.component';
     LoginComponent,
     ReactiveFormsModule,
     FirstInputComponent,
-    ToastComponent
+    MatSnackBarModule
   ],
   providers: [
-    LoginService
+    LoginService,
+    ToastService
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
@@ -24,9 +26,7 @@ import { ToastComponent } from '../../components/toast/toast.component';
 export class LoginPage {
   loginForm!: FormGroup;
 
-  @ViewChild(ToastComponent) toast!: ToastComponent;
-
-  constructor(private router: Router, private loginService: LoginService) {
+  constructor(private router: Router, private loginService: LoginService, private toast: ToastService) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
@@ -36,10 +36,10 @@ export class LoginPage {
   submit() {
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
       next: () => {
-        this.toast.showToast('success', 'Login realizado com sucesso!');
+        this.toast.showToast('success', 'Login realizado com sucesso!')
         this.router.navigate(['/dashboard']);
       },
-      error: () => this.toast.showToast('danger', 'Erro ao realizar login. Verifique suas credenciais.')
+      error: () => this.toast.showToast('error', 'Erro ao realizar login. Verifique suas credenciais.')
     });
   }
 

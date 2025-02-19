@@ -1,0 +1,34 @@
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  min-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  background-color: inherit; /* será injetada via estilo inline */
+  
+  span {
+    padding-right: 10px;
+  }
+}
+
+
+.close-button {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.success {
+  background-color: #4CAF50; // Verde para sucesso
+  color: white;
+}
+
+.error {
+  background-color: #F44336; // Vermelho para erro
+  color: white;
+}
