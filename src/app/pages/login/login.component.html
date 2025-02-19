@@ -4,6 +4,8 @@ e adicionando demais dados como um form -->
   title="Login into your account"
   primaryBtnText="SIGN IN"
   secondaryBtnText="SIGN UP"
+  (submit)="submit()"
+  (navigate)="navigate()"
 >
   <form [formGroup]="loginForm">
     <app-first-input
@@ -23,5 +25,6 @@ e adicionando demais dados como um form -->
     >
       <i class="fa fa-lock"></i>
     </app-first-input>
+    <span>Forgot password?</span>
   </form>
 </app-login-component>

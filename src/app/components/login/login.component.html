@@ -6,13 +6,17 @@
     <!-- ng-content injeta toda e qualquer informação adicional que esta vindo do HTML pai (loginPage) -->
     <ng-content></ng-content>
     <div class="btn-wrapper">
-      <button class="primary-btn">{{ primaryBtnText }}</button>
+      <button class="primary-btn" (click)="submit()">
+        {{ primaryBtnText }}
+      </button>
       <div class="divider">
         <div></div>
         <span>OR</span>
         <div></div>
       </div>
-      <button class="secondary-btn">{{ secondaryBtnText }}</button>
+      <button class="secondary-btn" (click)="navigate()">
+        {{ secondaryBtnText }}
+      </button>
     </div>
   </section>
   <section class="logo-section">
