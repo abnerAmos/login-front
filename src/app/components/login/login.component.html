@@ -6,7 +6,12 @@
     <!-- ng-content injeta toda e qualquer informação adicional que esta vindo do HTML pai (loginPage) -->
     <ng-content></ng-content>
     <div class="btn-wrapper">
-      <button class="primary-btn" (click)="submit()" [disabled]="disableBtn">
+      <button
+        class="primary-btn"
+        matRipple
+        (click)="submit()"
+        [disabled]="disableBtn"
+      >
         {{ primaryBtnText }}
       </button>
       <div class="divider">
@@ -14,7 +19,12 @@
         <span>OR</span>
         <div></div>
       </div>
-      <button class="secondary-btn" (click)="navigate()">
+      <button
+        class="secondary-btn"
+        matRipple
+        matRippleColor="rgba(255, 255, 255, 0.3)"
+        (click)="navigate()"
+      >
         {{ secondaryBtnText }}
       </button>
     </div>

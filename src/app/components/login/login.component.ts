@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, input, Output } from '@angular/core';
+import { MatRippleModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-login-component',
   standalone: true,
-  imports: [],
+  imports: [MatRippleModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
