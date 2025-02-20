@@ -6,6 +6,7 @@ e adicionando demais dados como um form -->
   secondaryBtnText="SIGN UP"
   (submit)="submit()"
   (navigate)="navigate()"
+  [disableBtn]="!loginForm.valid"
 >
   <form [formGroup]="loginForm">
     <app-first-input

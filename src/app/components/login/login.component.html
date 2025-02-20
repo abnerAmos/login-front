@@ -6,7 +6,7 @@
     <!-- ng-content injeta toda e qualquer informação adicional que esta vindo do HTML pai (loginPage) -->
     <ng-content></ng-content>
     <div class="btn-wrapper">
-      <button class="primary-btn" (click)="submit()">
+      <button class="primary-btn" (click)="submit()" [disabled]="disableBtn">
         {{ primaryBtnText }}
       </button>
       <div class="divider">
