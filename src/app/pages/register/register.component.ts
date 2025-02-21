@@ -4,8 +4,8 @@ import { FirstInputComponent } from '../../components/first-input/first-input.co
 import { Router } from '@angular/router';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ToastService } from '../../services/toast/toast.service';
-import { RegisterService } from '../../services/register/register.service';
 import { EntryComponent } from '../../components/entry/entry.component';
+import { LoginService } from '../../services/api/login.service';
 
 @Component({
   selector: 'app-register-page',
@@ -17,7 +17,7 @@ import { EntryComponent } from '../../components/entry/entry.component';
     MatSnackBarModule
   ],
   providers: [
-    RegisterService,
+    LoginService,
     ToastService
   ],
   templateUrl: './register.component.html',
@@ -26,7 +26,7 @@ import { EntryComponent } from '../../components/entry/entry.component';
 export class RegisterPage {
   registerForm!: FormGroup;
 
-  constructor(private router: Router, private registerService: RegisterService, private toast: ToastService) {
+  constructor(private router: Router, private loginService: LoginService, private toast: ToastService) {
     this.registerForm = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -36,7 +36,7 @@ export class RegisterPage {
   }
 
   submit() {
-    this.registerService.register(
+    this.loginService.register(
       this.registerForm.value.username,
       this.registerForm.value.email,
       this.registerForm.value.password

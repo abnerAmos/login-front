@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FirstInputComponent } from '../../components/first-input/first-input.component';
 import { Router } from '@angular/router';
-import { LoginService } from '../../services/login/login.service';
+import { LoginService } from '../../services/api/login.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ToastService } from '../../services/toast/toast.service';
 import { EntryComponent } from '../../components/entry/entry.component';
