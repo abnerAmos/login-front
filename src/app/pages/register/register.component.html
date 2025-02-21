@@ -1,14 +1,23 @@
 <!-- Injeção do COMPONENTE de login dentro do HTML de loginPage com variáveis através do @Input 
 e adicionando demais dados como um form -->
 <app-entry-component
-  title="Login into your account"
-  primaryBtnText="SIGN IN"
-  secondaryBtnText="SIGN UP"
+  title="Sign in and start today"
+  primaryBtnText="SIGN IN NOW"
+  secondaryBtnText="LOGIN NOW"
   (submit)="submit()"
   (navigate)="navigate()"
-  [disableBtn]="!loginForm.valid"
+  [disableBtn]="!registerForm.valid"
 >
-  <form [formGroup]="loginForm">
+  <form [formGroup]="registerForm">
+    <app-first-input
+      formControlName="username"
+      inputName="username"
+      type="text"
+      label="Username"
+      placeHolder="John Doe"
+    >
+      <i class="fa fa-envelope"></i>
+    </app-first-input>
     <app-first-input
       formControlName="email"
       inputName="email"
@@ -26,6 +35,13 @@ e adicionando demais dados como um form -->
     >
       <i class="fa fa-lock"></i>
     </app-first-input>
-    <span>Forgot password?</span>
+    <app-first-input
+      formControlName="passwordConfirm"
+      inputName="passwordConfirm"
+      type="password"
+      label="Confirm your password"
+    >
+      <i class="fa fa-lock"></i>
+    </app-first-input>
   </form>
 </app-entry-component>

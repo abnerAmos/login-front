@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { LoginComponent } from '../../components/login/login.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FirstInputComponent } from '../../components/first-input/first-input.component';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login/login.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ToastService } from '../../services/toast/toast.service';
+import { EntryComponent } from '../../components/entry/entry.component';
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
   imports: [
-    LoginComponent,
+    EntryComponent,
     ReactiveFormsModule,
     FirstInputComponent,
     MatSnackBarModule
@@ -29,7 +29,7 @@ export class LoginPage {
   constructor(private router: Router, private loginService: LoginService, private toast: ToastService) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)])
+      password: new FormControl('', [Validators.required, Validators.minLength(8)])
     })
   }
 
@@ -44,6 +44,6 @@ export class LoginPage {
   }
 
   navigate() {
-    this.router.navigate(["/sign-up"])
+    this.router.navigate(["/register"])
   }
 }

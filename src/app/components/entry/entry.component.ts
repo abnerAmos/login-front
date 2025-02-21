@@ -2,13 +2,13 @@ import { Component, EventEmitter, Input, input, Output } from '@angular/core';
 import { MatRippleModule } from '@angular/material/core';
 
 @Component({
-  selector: 'app-login-component',
+  selector: 'app-entry-component',
   standalone: true,
   imports: [MatRippleModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  templateUrl: './entry.component.html',
+  styleUrl: './entry.component.scss'
 })
-export class LoginComponent {
+export class EntryComponent {
   @Input() title: string = "";
   @Input() primaryBtnText: string = "";
   @Input() secondaryBtnText: string = "";
