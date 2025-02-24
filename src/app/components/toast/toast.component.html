@@ -1,5 +1,9 @@
+<!-- Componente de Toast (Notificação) -->
 <div *ngIf="isVisible" class="toast" [ngClass]="type" @toastAnimation>
+  <!-- Exibe a mensagem da notificação -->
   <span>{{ message }}</span>
+
+  <!-- Botão para fechar a notificação -->
   <button mat-icon-button (click)="hideToast()">
     <mat-icon>close</mat-icon>
   </button>

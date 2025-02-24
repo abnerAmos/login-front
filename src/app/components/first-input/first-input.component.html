@@ -1,5 +1,10 @@
+<!-- Estrutura do componente de entrada de dados -->
 <div class="input-wrapper">
+
+  <!-- Rótulo do campo de entrada -->
   <label [for]="inputName">{{ label }}</label>
+
+  <!-- Campo de entrada propriamente dito -->
   <div class="input-content">
     <input
       [type]="type"
@@ -7,6 +12,8 @@
       [value]="value"
       (input)="onInput($event)"
     />
+
+    <!-- Espaço reservado para ícones ou elementos adicionais -->
     <div class="icon">
       <ng-content></ng-content>
     </div>

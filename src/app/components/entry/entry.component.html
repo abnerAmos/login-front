@@ -1,11 +1,13 @@
 <main>
+  <!-- Seção do formulário contendo a logo principal, título e botões de ação -->
   <section class="form-section">
     <img src="/assets/svg/logo-main.svg" alt="main-logo" />
     <h2>{{ title }}</h2>
 
-    <!-- ng-content injeta toda e qualquer informação adicional que esta vindo do HTML pai (loginPage) -->
+    <!-- O ng-content permite a injeção de conteúdo personalizado do componente pai (loginPage)-->
     <ng-content></ng-content>
     <div class="btn-wrapper">
+      <!-- Botão principal para submissão de ação -->
       <button
         class="primary-btn"
         matRipple
@@ -14,11 +16,15 @@
       >
         {{ primaryBtnText }}
       </button>
+
+      <!-- Divisor visual entre os botões -->
       <div class="divider">
         <div></div>
         <span>OR</span>
         <div></div>
       </div>
+
+      <!-- Botão secundário para navegação -->
       <button
         class="secondary-btn"
         matRipple
@@ -29,6 +35,8 @@
       </button>
     </div>
   </section>
+
+  <!-- Seção da logo secundária e nome da aplicação -->
   <section class="logo-section">
     <img src="/assets/svg/logo.svg" alt="secundary-logo" />
     <h1>My Page</h1>
