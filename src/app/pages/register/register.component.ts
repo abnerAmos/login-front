@@ -12,9 +12,9 @@ import { LoginService } from '../../services/api/login.service';
   standalone: true,
   imports: [
     EntryComponent,
-    ReactiveFormsModule,
+    ReactiveFormsModule, // Módulo para manipulação de formulários reativos
     FirstInputComponent,
-    MatSnackBarModule
+    MatSnackBarModule // Módulo para exibir notificações do Angular Material (não está sendo usado diretamente, mas pode ser necessário para o ToastService)
   ],
   providers: [
     LoginService,
@@ -27,6 +27,8 @@ export class RegisterPage {
   registerForm!: FormGroup;
 
   constructor(private router: Router, private loginService: LoginService, private toast: ToastService) {
+
+    // Inicializa o formulário de registro com os campos e suas validações
     this.registerForm = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -35,6 +37,11 @@ export class RegisterPage {
     })
   }
 
+  /**
+   * Submete os dados do formulário para realizar o cadastro do usuário.
+   * Caso o cadastro seja bem-sucedido, exibe um toast de sucesso e redireciona para a página de login.
+   * Se houver erro, exibe um toast de erro.
+   */
   submit() {
     this.loginService.register(
       this.registerForm.value.username,
@@ -49,6 +56,9 @@ export class RegisterPage {
     });
   }
 
+  /**
+   * Redireciona o usuário para a página de login.
+   */
   navigate() {
     this.router.navigate(["/login"])
   }

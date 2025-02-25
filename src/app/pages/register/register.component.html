@@ -1,5 +1,5 @@
-<!-- Injeção do COMPONENTE de login dentro do HTML de loginPage com variáveis através do @Input 
-e adicionando demais dados como um form -->
+<!-- Injeção do componente de entrada (EntryComponent) na página de login -->
+<!-- Passagem de variáveis via @Input e manipulação de eventos via @Output -->
 <app-entry-component
   title="Sign in and start today"
   primaryBtnText="SIGN IN NOW"
@@ -8,7 +8,9 @@ e adicionando demais dados como um form -->
   (navigate)="navigate()"
   [disableBtn]="!registerForm.valid"
 >
+  <!-- Formulário de registro com Reactive Forms -->
   <form [formGroup]="registerForm">
+    <!-- Campo para o nome de usuário -->
     <app-first-input
       formControlName="username"
       inputName="username"
@@ -18,6 +20,8 @@ e adicionando demais dados como um form -->
     >
       <i class="fa fa-envelope"></i>
     </app-first-input>
+
+    <!-- Campo para o e-mail -->
     <app-first-input
       formControlName="email"
       inputName="email"
@@ -27,6 +31,8 @@ e adicionando demais dados como um form -->
     >
       <i class="fa fa-envelope"></i>
     </app-first-input>
+
+    <!-- Campo para a senha -->
     <app-first-input
       formControlName="password"
       inputName="password"
@@ -35,6 +41,8 @@ e adicionando demais dados como um form -->
     >
       <i class="fa fa-lock"></i>
     </app-first-input>
+
+    <!-- Campo para confirmação da senha -->
     <app-first-input
       formControlName="passwordConfirm"
       inputName="passwordConfirm"
