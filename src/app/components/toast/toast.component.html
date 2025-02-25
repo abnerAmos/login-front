@@ -1,5 +1,6 @@
 <!-- Componente de Toast (Notificação) -->
-<div *ngIf="isVisible" class="toast" [ngClass]="type" @toastAnimation>
+@if (isVisible) {
+<div class="toast" [ngClass]="type" @toastAnimation>
   <!-- Exibe a mensagem da notificação -->
   <span>{{ message }}</span>
 
@@ -8,3 +9,4 @@
     <mat-icon>close</mat-icon>
   </button>
 </div>
+}
