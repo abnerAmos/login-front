@@ -1,5 +1,8 @@
-<!-- Injeção do COMPONENTE de login dentro do HTML de loginPage com variáveis através do @Input 
-e adicionando demais dados como um form -->
+<!-- 
+  Componente de entrada reutilizável que estrutura a tela de login.
+  Usa o @Input para receber variáveis do componente pai e personalizar os textos dos botões.
+  Também contém eventos (submit e navigate) para interação com a lógica de autenticação.
+-->
 <app-entry-component
   title="Login into your account"
   primaryBtnText="SIGN IN"
@@ -8,7 +11,9 @@ e adicionando demais dados como um form -->
   (navigate)="navigate()"
   [disableBtn]="!loginForm.valid"
 >
+  <!-- Formulário de login utilizando Reactive Forms -->
   <form [formGroup]="loginForm">
+    <!-- Campo de entrada para o e-mail do usuário -->
     <app-first-input
       formControlName="email"
       inputName="email"
@@ -18,6 +23,8 @@ e adicionando demais dados como um form -->
     >
       <i class="fa fa-envelope"></i>
     </app-first-input>
+
+    <!-- Campo de entrada para a senha do usuário -->
     <app-first-input
       formControlName="password"
       inputName="password"
@@ -26,6 +33,8 @@ e adicionando demais dados como um form -->
     >
       <i class="fa fa-lock"></i>
     </app-first-input>
+
+    <!-- Link para recuperação de senha -->
     <span>Forgot password?</span>
   </form>
 </app-entry-component>

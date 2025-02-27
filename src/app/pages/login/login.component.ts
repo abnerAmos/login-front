@@ -26,6 +26,7 @@ import { EntryComponent } from '../../components/entry/entry.component';
 export class LoginPage {
   loginForm!: FormGroup;
 
+  // Inicializa o formulário de login com os campos e suas respectivas validações
   constructor(private router: Router, private loginService: LoginService, private toast: ToastService) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -33,6 +34,11 @@ export class LoginPage {
     })
   }
 
+  /**
+   * Submete os dados do formulário para realizar a autenticação do usuário.
+   * Caso o login seja bem-sucedido, exibe um toast de sucesso e redireciona para o dashboard.
+   * Se houver erro, exibe um toast de erro informando que as credenciais são inválidas.
+   */
   submit() {
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
       next: () => {
@@ -43,6 +49,9 @@ export class LoginPage {
     });
   }
 
+  /**
+   * Redireciona o usuário para a página de registro.
+   */
   navigate() {
     this.router.navigate(["/register"])
   }
