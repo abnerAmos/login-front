@@ -10,7 +10,7 @@ import { ComponentPortal } from '@angular/cdk/portal';
 export class ToastService {
   private overlayRef: OverlayRef | null = null;
 
-  constructor(private overlay: Overlay, private injector: Injector) { }
+  constructor(private overlay: Overlay) { }
 
   showToast(type: 'success' | 'error', message: string, duration: number = 5000): void {
     // Se já houver um toast aberto, fecha-o antes de criar um novo.

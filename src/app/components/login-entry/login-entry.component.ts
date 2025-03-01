@@ -11,8 +11,8 @@ import { MatRippleModule } from '@angular/material/core';
   selector: 'app-entry-component',
   standalone: true,
   imports: [MatRippleModule],
-  templateUrl: './entry.component.html',
-  styleUrl: './entry.component.scss'
+  templateUrl: './login-entry.component.html',
+  styleUrl: './login-entry.component.scss'
 })
 export class EntryComponent {
   @Input() title: string = "";

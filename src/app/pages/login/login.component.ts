@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { FirstInputComponent } from '../../components/first-input/first-input.component';
+import { FirstInputComponent } from '../../components/login-input/login-input.component';
 import { Router } from '@angular/router';
-import { LoginService } from '../../services/api/login.service';
+import { LoginService } from '../../api/login/login.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ToastService } from '../../services/toast/toast.service';
-import { EntryComponent } from '../../components/entry/entry.component';
+import { EntryComponent } from '../../components/login-entry/login-entry.component';
 
 @Component({
   selector: 'app-login-page',

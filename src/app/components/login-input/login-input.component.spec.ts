@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FirstInputComponent } from './first-input.component';
+import { FirstInputComponent } from './login-input.component';
 
 describe('FirstInputComponent', () => {
   let component: FirstInputComponent;
@@ -10,7 +10,7 @@ describe('FirstInputComponent', () => {
     await TestBed.configureTestingModule({
       imports: [FirstInputComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(FirstInputComponent);
     component = fixture.componentInstance;

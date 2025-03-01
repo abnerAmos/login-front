@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginResponse } from '../../types/login-response.type';
+import { TokenResponse } from '../../types/token.type';
 import { tap } from 'rxjs';
-import { TokenService } from '../token/token.service';
+import { TokenService } from '../../auth/token/token.service';
 
 /**
  * Serviço responsável por gerenciar autenticação e registro de usuários.
@@ -34,7 +34,7 @@ export class LoginService {
    * @returns Um Observable contendo a resposta do login.
    */
   login(email: string, password: string) {
-    return this.httpClient.post<LoginResponse>(`${this.apiUrl}/login`, { email, password }).pipe(
+    return this.httpClient.post<TokenResponse>(`${this.apiUrl}/login`, { email, password }).pipe(
       tap(response => this.tokenService.saveTokens(response.token, response.refreshToken))
     );
   }
