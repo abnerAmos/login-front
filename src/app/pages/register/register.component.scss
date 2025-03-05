@@ -8,9 +8,12 @@ form {
   margin-bottom: 30px;
 
   span {
-    font-size: 14px;
-    text-decoration: underline;
-    color: $second-text-color;
-    text-align: end;
+    margin-top: -15px;
+
+    .text-checkbox {
+        color: $first-text-color;
+    }
   }
+
+  
 }

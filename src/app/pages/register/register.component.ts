@@ -6,6 +6,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ToastService } from '../../services/toast/toast.service';
 import { EntryComponent } from '../../components/login-entry/login-entry.component';
 import { LoginService } from '../../api/login/login.service';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-register-page',
@@ -14,6 +15,7 @@ import { LoginService } from '../../api/login/login.service';
     EntryComponent,
     ReactiveFormsModule, // Módulo para manipulação de formulários reativos
     FirstInputComponent,
+    MatCheckboxModule,
     MatSnackBarModule // Módulo para exibir notificações do Angular Material (não está sendo usado diretamente, mas pode ser necessário para o ToastService)
   ],
   providers: [
@@ -33,7 +35,8 @@ export class RegisterPage {
       username: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-      passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(8)])
+      passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(8)]),
+      isExperimental: new FormControl(false)
     })
   }
 
@@ -43,17 +46,18 @@ export class RegisterPage {
    * Se houver erro, exibe um toast de erro.
    */
   submit() {
-    this.loginService.register(
-      this.registerForm.value.username,
-      this.registerForm.value.email,
-      this.registerForm.value.password
-    ).subscribe({
-      next: () => {
-        this.toast.showToast('success', 'Cadastro realizado com sucesso!')
-        this.router.navigate(['/auth/login']);
-      },
-      error: () => this.toast.showToast('error', 'Erro ao realizar cadastro. Entre em contato com o suporte.')
-    });
+    const { username, email, password, isExperimental } = this.registerForm.value;
+
+    console.log(isExperimental)
+
+    this.loginService.register(username, email, password, isExperimental)
+      .subscribe({
+        next: () => {
+          this.toast.showToast('success', 'Cadastro realizado com sucesso!')
+          this.router.navigate(['/auth/login']);
+        },
+        error: () => this.toast.showToast('error', 'Erro ao realizar cadastro. Entre em contato com o suporte.')
+      });
   }
 
   /**

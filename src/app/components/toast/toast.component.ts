@@ -75,4 +75,6 @@ export class ToastComponent implements OnInit {
       clearTimeout(this.timerId);
     }
   }
+
+
 }

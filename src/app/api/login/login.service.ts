@@ -48,7 +48,7 @@ export class LoginService {
    * @param password Senha do usuário.
    * @returns Um Observable contendo a resposta do cadastro.
    */
-  register(username: string, email: string, password: string) {
-    return this.httpClient.post(`${this.apiUrl}/register`, { username, email, password })
+  register(username: string, email: string, password: string, isExperimental: boolean) {
+    return this.httpClient.post(`${this.apiUrl}/register`, { username, email, password, isExperimental })
   }
 }
